@@ -3,7 +3,7 @@ let order = [];
 function addItem(name, price) {
     const quantity = 1;
     order.push({ name, price, quantity });
-    
+    updateCart();
 }
 
 function updateCart() {
@@ -67,34 +67,17 @@ function sendOrder() {
     window.open(whatsappLink, '_blank');
 }
 
-// Adicionando event listeners para abrir e fechar o popup
+// Adicionando event listeners para abrir e fechar o popup do carrinho
 document.getElementById('openCartButton').addEventListener('click', openCartPopup);
 document.getElementById('closeCartPopup').addEventListener('click', closeCartPopup);
 
-// Fechar o popup quando clicar fora dele
+// Fechar o popup do carrinho quando clicar fora dele
 window.onclick = function(event) {
     const cartPopup = document.getElementById('cartPopup');
     if (event.target === cartPopup) {
         closeCartPopup();
     }
 };
-
-// Seleciona todos os elementos com a classe 'botaoAdicionar' e adiciona o evento de clique a cada um
-var buttons = document.getElementsByClassName('botaoAdicionar');
-
-// Itera sobre todos os elementos com a classe 'botaoAdicionar'
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function() {
-        var button = this;
-        button.textContent = 'Adicionado ao carrinho'; // Altera o texto do botão para "Adicionado"
-        button.classList.add('changed'); // Adiciona a classe para alterar a cor do botão
-
-        setTimeout(function() {
-            button.textContent = 'Adicionar'; // Retorna o texto do botão para "Clique aqui"
-            button.classList.remove('changed'); // Remove a classe após 3 segundos
-        }, 3000); // 3000 milissegundos = 3 segundos
-    });
-}
 
 // Função para abrir o popup
 function openPopup() {
@@ -106,19 +89,6 @@ function closePopup() {
     document.getElementById('popup').style.display = "none";
 }
 
-// Adicionar event listener para abrir o popup ao clicar no item do produto
-document.getElementById('productItem').addEventListener('click', function(event) {
-    // Verifica se o clique não foi no botão "Adicionar"
-    if (!event.target.closest('#botaoAdicionar')) {
-        openPopup();
-    }
-});
-
-// Previne que o clique no botão "Adicionar" abra o popup
-document.getElementById('botaoAdicionar').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-
 // Adicionar event listener para fechar o popup ao clicar no botão "close"
 document.getElementsByClassName('close')[0].onclick = function() {
     closePopup();
@@ -126,19 +96,48 @@ document.getElementsByClassName('close')[0].onclick = function() {
 
 // Adicionar event listener para fechar o popup ao clicar fora do conteúdo do popup
 window.onclick = function(event) {
-    if (event.target == document.getElementById('popup')) {
+    const popup = document.getElementById('popup');
+    if (event.target == popup) {
         closePopup();
     }
 }
 
-window.addEventListener('scroll', function() {
-    var stickyElement = document.getElementById('stickyElement');
-    var stickyContainer = document.querySelector('.sticky-container');
-    var stickyContainerOffset = stickyContainer.offsetTop;
-    
-    if (window.pageYOffset >= stickyContainerOffset) {
-        stickyElement.classList.add('sticky');
-    } else {
-        stickyElement.classList.remove('sticky');
-    }
-});
+// Seleciona todos os elementos com a classe 'gridProducts' e adiciona o evento de clique a cada um
+var products = document.getElementsByClassName('gridProducts');
+
+for (var i = 0; i < products.length; i++) {
+    products[i].addEventListener('click', function(event) {
+        // Verifica se o clique não foi no botão "Adicionar"
+        if (!event.target.closest('.botaoAdicionar')) {
+            var productName = this.getAttribute('data-name');
+            var productDescription = this.getAttribute('data-description');
+            var productImage = this.getAttribute('data-image');
+            
+            // Atualiza o conteúdo do popup
+            document.getElementById('popup-title').textContent = productName;
+            document.getElementById('popup-description').textContent = productDescription;
+            document.getElementById('popup-image').src = productImage;
+
+            // Abre o popup
+            openPopup();
+        }
+    });
+}
+
+// Seleciona todos os botões "Adicionar" e adiciona o evento de clique a cada um
+var buttons = document.getElementsByClassName('botaoAdicionar');
+
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function(event) {
+        var button = this;
+        button.textContent = 'Adicionado ao carrinho'; // Altera o texto do botão para "Adicionado"
+        button.classList.add('changed'); // Adiciona a classe para alterar a cor do botão
+
+        setTimeout(function() {
+            button.textContent = 'Adicionar'; // Retorna o texto do botão para "Adicionar"
+            button.classList.remove('changed'); // Remove a classe após 3 segundos
+        }, 3000); // 3000 milissegundos = 3 segundos
+
+        event.stopPropagation(); // Previne que o clique no botão feche o popup
+    });
+}

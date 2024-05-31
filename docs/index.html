@@ -40,39 +40,40 @@
             </div>
 
             <h2 id="hamburgueres">Hamburgueres</h2>
-            <ul class="displayFlexUl">
-                <li class="gridProducts" id="productItem">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
-                    <div>
-                        <h3>Duplo cheeseburger com bacon</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="gridProductsSpace">
-                            <span>R$ 15,00</span>
-                            <button class="botaoAdicionar" id="botaoAdicionar" onclick="addItem('Duplo cheeseburger com bacon', 15)">Adicionar</button>
-                        </div>
-                    </div>
-                </li>
-            
-            
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close">&times;</span>
-                    <p>Conteúdo do popup aqui</p>
-                    <img class="imagempopup" src="burger.jpg" alt="">
-                </div>
+<ul class="displayFlexUl">
+    <li class="gridProducts" data-name="Duplo cheeseburger com bacon" data-price="15" data-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry." data-image="burger.jpg">
+        <img class="gridProductsImage" src="burger.jpg" alt="">
+        <div>
+            <h3>Duplo cheeseburger com bacon</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="gridProductsSpace">
+                <span>R$ 15,00</span>
+                <button class="botaoAdicionar" onclick="addItem('Duplo cheeseburger com bacon', 15)">Adicionar</button>
             </div>
-            
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
-                    <div>
-                        <h3>X-tudo completo</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="gridProductsSpace">
-                            <span>R$ 12,00</span>
-                            <button class="botaoAdicionar" onclick="addItem('X-tudo completo', 12)">Adicionar</button>
-                        </div>
-                    </div>
-                </li>
+        </div>
+    </li>
+    <li class="gridProducts" data-name="X-tudo completo" data-price="12" data-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry." data-image="burger.jpg">
+        <img class="gridProductsImage" src="burger.jpg" alt="">
+        <div>
+            <h3>X-tudo completo</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="gridProductsSpace">
+                <span>R$ 12,00</span>
+                <button class="botaoAdicionar" onclick="addItem('X-tudo completo', 12)">Adicionar</button>
+            </div>
+        </div>
+    </li>
+    <!-- Continue com os outros itens -->
+</ul>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h3 id="popup-title">Título do Produto</h3>
+        <p id="popup-description">Descrição do Produto</p>
+        <img id="popup-image" class="imagempopup" src="" alt="">
+    </div>
+</div>
                 <li class="gridProducts">
                     <img class="gridProductsImage" src="burger.jpg" alt="">
                     <div>
@@ -286,7 +287,7 @@
                 <li class="gridProducts">
                     <img class="gridProductsImage" src="burger.jpg" alt="">
                     <div>
-                        <h3>X-egg</h3>
+                        <h3>Guaraná Antartica 2lt</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 9,00</span>
