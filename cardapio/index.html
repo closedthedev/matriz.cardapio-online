@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio Online</title>
@@ -8,41 +10,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/mozedlogo.png">
+
+
 </head>
+
+
 <body>
+
+
+
     <div class="main-content">
         
         <header class="mainHeader">
             <div class="alignImage">
-                <img class="imageHeader" src="fundoazul.png" alt="">
+                <img class="imageHeader" src="assets/mozerd_capa.png" alt="">
             </div>
             <div class="mainLogo">
-                <img class="logoHeader" src="logohamburgueria.jpg" alt="">
+                <img class="logoHeader" src="assets/mozedlogo.png" alt="">
             </div>
             <div class="textoPorCima">
                 <h1 class="h1Header">Mozed Hamburgueria</h1>
-                <img class="info" src="icons8-info-50.png"></img>
-                <img class="share" src="icons8-share-48.png" alt="">
+            <!---<img class="info" src="assets/icons8-info-50.png"></img>
+                <img class="share" src="assets/icons8-share-48.png" alt="">   -->
             </div>
-            <div class="estiloButton">
+            <!--- <div class="estiloButton">
                 <button class="buttonVerMapa">📌Ver mapa</button>
-            </div>
+            </div> -->
+
         </header>
+
+
         <section class="entradas">
+            
             <div class="sticky-container">
                 <div class="sticky-element" id="stickyElement">
-            <div class="link-container">
-                <a href="#hamburgueres" class="menu-link">Hamburgueres</a>
-                <a href="#pizza" class="menu-link">Pizzas</a>
-                <a href="#batata_frita" class="menu-link">Batata-frita</a>
-                <a href="#bebidas" class="">Bebidas</a>
-            </div>
-            </div>
+                    <div class="link-container">
+                        <a href="#hamburgueres" class="menu-link">Hamburgueres</a>
+                        <a href="#pizza" class="menu-link">Pizzas</a>
+                        <a href="#batata_frita" class="menu-link">Batata-frita</a>
+                        <a href="#bebidas" class="">Bebidas</a>
+                    </div>
+                </div>
 
-            <h2 id="hamburgueres">Hamburgueres</h2>
-            <ul class="displayFlexUl">
-                <li class="gridProducts" id="productItem">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+                <h2 id="hamburgueres">Hamburgueres</h2>
+                <ul class="displayFlexUl">
+                <li class="gridProducts" onclick="openItemDetails('Duplo cheeseburger com bacon', 15, 'assets/burger.jpg', 'Descrição do Duplo cheeseburger com bacon')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>Duplo cheeseburger com bacon</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -54,18 +69,12 @@
                 </li>
             
             
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close">&times;</span>
-                    <p>Conteúdo do popup aqui</p>
-                    <img class="imagempopup" src="burger.jpg" alt="">
-                </div>
-            </div>
             
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+            
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burgertriplo.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burgertriplo.jpg" alt="">
                     <div>
-                        <h3>X-tudo completo</h3>
+                        <h3>Cheeseburger triplo com bacon</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 12,00</span>
@@ -73,8 +82,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>X-egg</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -84,8 +95,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>Cheeseburger triplo</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -95,8 +108,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>X-salada</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -106,8 +121,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>Cheeseburger simples</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -118,13 +135,14 @@
                     </div>
                 </li>
             </ul>
+
 
             <h2 id="pizza">Pizzas</h2>
             <ul class="displayFlexUl">
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizza.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizza.jpg" alt="">
                     <div>
-                        <h3>Duplo cheeseburger com bacon</h3>
+                        <h3>Pizza de calabresa</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 15,00</span>
@@ -132,10 +150,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizzafrangocatupiry.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizzafrangocatupiry.jpg" alt="">
                     <div>
-                        <h3>X-tudo completo</h3>
+                        <h3>Pizza de frango com catupiry</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 12,00</span>
@@ -143,10 +163,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizzamar.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizzamar.jpg" alt="">
                     <div>
-                        <h3>X-egg</h3>
+                        <h3>Pizza de frutos do mar</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 9,00</span>
@@ -154,10 +176,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizzadoce.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizzadoce.jpg" alt="">
                     <div>
-                        <h3>Cheeseburger triplo</h3>
+                        <h3>Pizza doce</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 17,00</span>
@@ -165,10 +189,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizzaportuguesa.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizzaportuguesa.jpg" alt="">
                     <div>
-                        <h3>X-salada</h3>
+                        <h3>Pizza portuguesa</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 11,00</span>
@@ -176,10 +202,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pizza.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pizzavegana.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pizzavegana.jpg" alt="">
                     <div>
-                        <h3>Cheeseburger simples</h3>
+                        <h3>Pizza vegana</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 12,00</span>
@@ -188,11 +216,12 @@
                     </div>
                 </li>
             </ul>
+
 
             <h2 id="batata_frita">Batata-Frita</h2>
             <ul class="displayFlexUl">
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
                         <h3>Duplo cheeseburger com bacon</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -202,8 +231,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
                         <h3>X-tudo completo</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -213,8 +244,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
                         <h3>X-egg</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -224,8 +257,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
                         <h3>Cheeseburger triplo</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -235,8 +270,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
                         <h3>X-salada</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -246,10 +283,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="batata.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/batata.jpg" alt="">
                     <div>
-                        <h3>Cheeseburger simples</h3>
+                        <h3>Batata-Frita turbinada</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 12,00</span>
@@ -259,12 +298,13 @@
                 </li>
             </ul>
 
+
             <h2 id="bebidas">Bebidas</h2>
             <ul class="displayFlexUl">
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/heineken.png', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/heineken.png" alt="">
                     <div>
-                        <h3>Duplo cheeseburger com bacon</h3>
+                        <h3>Heineken long neck</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 15,00</span>
@@ -272,10 +312,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/brahma.png', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/brahma.png" alt="">
                     <div>
-                        <h3>X-tudo completo</h3>
+                        <h3>Brahma duplo malte lata 269ml</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 12,00</span>
@@ -283,10 +325,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/guarana2lt.png', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/guarana2lt.png" alt="">
                     <div>
-                        <h3>X-egg</h3>
+                        <h3>Guaraná Antarctica 2lt</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div class="gridProductsSpace">
                             <span>R$ 9,00</span>
@@ -294,8 +338,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="pepsi1.png" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/pepsi1.png', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/pepsi1.png" alt="">
                     <div>
                         <h3>pepsi lata 310ml</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -305,8 +351,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="burger.jpg" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/burger.jpg', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/burger.jpg" alt="">
                     <div>
                         <h3>X-salada</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -316,8 +364,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="gridProducts">
-                    <img class="gridProductsImage" src="cocacola.png" alt="">
+
+
+                <li class="gridProducts" onclick="openItemDetails('X-tudo completo', 12, 'assets/cocacola.png', 'Descrição do X-tudo completo')">
+                    <img class="gridProductsImage" src="assets/cocacola.png" alt="">
                     <div>
                         <h3>Coca-Cola lata 350ml</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -329,7 +379,27 @@
                 </li>
             </ul>
 
+
             <!-- Repetição para outras seções -->
+
+        <div id="itemModal" class="modal">
+
+            <div class="modal-content">
+                <span id="closeItem" class="close"></span>
+                <img id="itemImage" src="" alt="Imagem do item">
+                
+                <h1 id="itemName"></h1>
+                <p id="itemDescription">Descrição do item</p>
+                
+                <!-- <input type='number' id='quantity' name='quantity' min='1' max='10'> -->
+                    <div class="popupSpaceBetween">
+
+                        <p class="namePrice">Preço: R$ <span id="itemPrice"></span></p>
+                        <button id="addToCartButton">Adicionar ao carrinho</button>
+
+                        </div>
+                </div>
+            </div>
             
         </section>
     </div>
@@ -337,14 +407,14 @@
     <footer>
         <button id="sendOrder" onclick="sendOrder()">Enviar Pedido via WhatsApp</button>
         
-        <img id="openCartButton" src="icons8-cart-64.png" alt="carrinho" onmouseover="hoverImage()" onmouseout="normalImage()" onclick="openCartPopup()">
+        <img id="openCartButton" src="assets/icons8-cart-64.png" alt="carrinho" onmouseover="hoverImage()" onmouseout="normalImage()" onclick="openCartPopup()">
         
     </footer>
 
     <!-- Popup do carrinho -->
     <div id="cartPopup" class="cart-popup" style="display: none;">
         <div class="cart-popup-content">
-            <span id="closeCartPopup" class="close">&times;</span>
+            <span id="closeCartPopup" class="close"></span>
             <h2>Carrinho de Compras</h2>
             <ul id="cartItems"></ul>
             <p id="cartTotal">Total: R$ 0,00</p>

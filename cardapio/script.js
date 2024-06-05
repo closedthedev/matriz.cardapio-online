@@ -60,7 +60,7 @@ function sendOrder() {
 
     message += `\nTotal: R$ ${total.toFixed(2)}`;
 
-    const whatsappNumber = "5521999999999";
+    const whatsappNumber = "5521966454694";
     const encodedMessage = encodeURIComponent(message);
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
@@ -95,41 +95,14 @@ for (var i = 0; i < buttons.length; i++) {
         }, 3000); // 3000 milissegundos = 3 segundos
     });
 }
-
-// Função para abrir o popup
-function openPopup() {
-    document.getElementById('popup').style.display = "block";
+var botoesAdicionar = document.getElementsByClassName('botaoAdicionar');
+for(var i = 0; i < botoesAdicionar.length; i++) {
+    botoesAdicionar[i].addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 }
 
-// Função para fechar o popup
-function closePopup() {
-    document.getElementById('popup').style.display = "none";
-}
 
-// Adicionar event listener para abrir o popup ao clicar no item do produto
-document.getElementById('productItem').addEventListener('click', function(event) {
-    // Verifica se o clique não foi no botão "Adicionar"
-    if (!event.target.closest('#botaoAdicionar')) {
-        openPopup();
-    }
-});
-
-// Previne que o clique no botão "Adicionar" abra o popup
-document.getElementById('botaoAdicionar').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-
-// Adicionar event listener para fechar o popup ao clicar no botão "close"
-document.getElementsByClassName('close')[0].onclick = function() {
-    closePopup();
-}
-
-// Adicionar event listener para fechar o popup ao clicar fora do conteúdo do popup
-window.onclick = function(event) {
-    if (event.target == document.getElementById('popup')) {
-        closePopup();
-    }
-}
 
 window.addEventListener('scroll', function() {
     var stickyElement = document.getElementById('stickyElement');
@@ -142,3 +115,28 @@ window.addEventListener('scroll', function() {
         stickyElement.classList.remove('sticky');
     }
 });
+
+
+
+
+
+function openItemDetails(name, price, image, description) {
+    var modal = document.getElementById("itemModal");
+    document.getElementById("itemName").innerText = name;
+    document.getElementById("itemPrice").innerText = price;
+    document.getElementById("itemImage").src = image; // Adiciona a imagem ao modal
+    document.getElementById("itemDescription").innerText = description; // Adiciona a descrição ao modal
+    document.getElementById("addToCartButton").onclick = function() {
+        addItem(name, price);
+        modal.style.display = "none";
+    };
+    modal.style.display = "block";
+    document.getElementsByClassName("close")[0].onclick = function() {
+        modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+}
